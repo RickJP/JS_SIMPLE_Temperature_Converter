@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
 * {
     padding: 0;
     margin: 0;
@@ -20,6 +22,7 @@ div {
 input[type=number] {
     width: 100%;
     height: 100%;
+    outline: none;   /*   removes blue line around box */
     background: black;
     font-family: 'Asap', sans-serif;
     color: white;
@@ -28,6 +31,16 @@ input[type=number] {
     border: 0;
 }
 
+ /* removes arrows from input box */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/* lightens text for placeholder in various browsers */
 ::-webkit-input-placeholder {
     color: #222222;
 }
