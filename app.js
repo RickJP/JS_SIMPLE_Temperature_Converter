@@ -2,9 +2,19 @@ const celsiusIn = document.querySelector('#celsius > input');
 const fahrenheitIn = document.querySelector('#fahrenheit > input');
 const kelvinIn = document.querySelector('#kelvin > input');
 
+function getMultiplier() {
+    let noOfDigits = 3;       /* decimal places precision */
+    let out = '1';
+
+    for (i = 1; i < noOfDigits; i++) {
+	    out += '0';
+    }   
+    return(parseInt(out));
+}
 
 function roundItDown(num) {
-    return Math.round(num * 100) / 100;
+    let multiplier = getMultiplier();
+    return Math.round(num * multiplier) / multiplier;
 }
 
 function celsiusToFahrenheitAndKelvin() {
@@ -38,6 +48,8 @@ function main() {
     celsiusIn.addEventListener('input', celsiusToFahrenheitAndKelvin);  
     fahrenheitIn.addEventListener('input', fahrenheitToCelsiusAndKelvin);
     kelvinIn.addEventListener('input', kelvinToCelsiusAndFahrenheit);
+
+    
 }
 
 main();
